@@ -1,0 +1,21 @@
+{
+  "name": "wiro-safari-extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Wiro AI for Safari: right-click any image, video, audio clip or text to run Wiro AI models and tools.",
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "xcode": "xcodebuild -project xcode/Wiro/Wiro.xcodeproj -scheme Wiro -configuration Debug CODE_SIGNING_ALLOWED=NO build"
+  },
+  "dependencies": {
+    "preact": "11.0.1"
+  },
+  "devDependencies": {
+    "@types/firefox-webext-browser": "143.0.1",
+    "esbuild": "0.28.2",
+    "typescript": "7.0.2"
+  }
+}
