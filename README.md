@@ -17,9 +17,12 @@ Right-click any image, video, audio clip, text or page in Safari to run Wiro AI 
 Wiro puts its AI models one right-click away. Pick what you want done with an image, a video, an audio clip, selected text or the page, choose a model from the live Wiro catalog, and the result comes back in the Wiro panel. You sign in with your Wiro account, runs are paid from your Wiro wallet, and the panel shows the price before you start.
 
 <p align="center">
-  <img src=".github/assets/screenshots/panel-edit.png" alt="The Wiro panel set up to edit an image, with the model, prompt, settings and price" width="30%">
-  <img src=".github/assets/screenshots/panel-models.png" alt="The model list of a category, sorted by popularity, with each model's price" width="30%">
-  <img src=".github/assets/screenshots/panel-studio.png" alt="The Wiro panel turning a page into a video with Wiro Studio" width="30%">
+  <img src=".github/assets/screenshots/1-price.png" alt="The Wiro panel set up to edit an image, with the price shown before the run" width="49%">
+  <img src=".github/assets/screenshots/2-video.png" alt="The Wiro panel turning a photo into a video" width="49%">
+</p>
+<p align="center">
+  <img src=".github/assets/screenshots/3-models.png" alt="The models made for a job, sorted by price, popularity or date" width="49%">
+  <img src=".github/assets/screenshots/4-studio.png" alt="The Wiro panel sending a page to Wiro Studio to make a video" width="49%">
 </p>
 
 ## What you can do
