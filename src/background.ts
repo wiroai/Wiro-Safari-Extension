@@ -22,11 +22,22 @@ const menus: MenusApi = {
   },
 };
 
-async function setUpMenus(): Promise<void> {
+async function buildAllMenus(): Promise<void> {
   const catalog = await loadCatalog(safariPlatform.storage, DEFAULT_CONFIG.catalogUrl);
   await buildMenus(menus, catalog);
 }
 
+// One build at a time: two runs side by side would create the same ids twice.
+let menusBuilt: Promise<void> = Promise.resolve();
+function setUpMenus(): Promise<void> {
+  menusBuilt = menusBuilt.then(buildAllMenus, buildAllMenus);
+  return menusBuilt;
+}
+
+// Safari keeps no right-click menus across a restart, and does not always
+// start the background on launch, so the menus are built every time this
+// page starts, not only on install and startup.
+void setUpMenus();
 browser.runtime.onInstalled.addListener(() => void setUpMenus());
 browser.runtime.onStartup.addListener(() => void setUpMenus());
 

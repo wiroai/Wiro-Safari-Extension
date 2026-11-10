@@ -66,7 +66,7 @@ After a core change: `git -C core pull origin main`, rebuild, and commit the new
 The shared code (sign-in, MCP client, actions, model gateway, pricing and the panel UI) lives in [Wiro-Extension-Core](https://github.com/wiroai/Wiro-Extension-Core), included here as the `core/` submodule. This repo adds the Safari parts:
 
 - `src/platform.ts`: storage and tabs for the core.
-- `src/background.ts`: the service worker. It builds the right-click menus, opens the panel for a click and finishes the sign-in.
+- `src/background.ts`: the background page (non-persistent; Safari did not always start a service worker at launch, and it keeps no right-click menus across a restart). It builds the right-click menus each time it starts, opens the panel for a click and finishes the sign-in.
 - `src/callback.ts`: a content script that runs only on `https://wiro.ai/extension/callback`.
 - `src/panel.ts`, `public/panel.html`: the panel, shown as the toolbar popup and in a tab.
 - `manifest.json`: Manifest V3 for Safari 16.4 and later.
