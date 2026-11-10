@@ -40,7 +40,7 @@ Each action lists the Wiro models made for it, so new models show up without an 
 ## How Safari differs
 
 - **No side panel.** The toolbar button opens the panel as a popup. A right-click opens the panel in a tab (a second click reuses that tab), because Safari's popup closes as soon as focus moves.
-- **No identity API.** Apple's guidance is to start the OAuth flow in a new tab. The sign-in opens wiro.ai in a tab; wiro.ai sends the browser back to `https://wiro.ai/extension/callback`; the callback content script hands that address to the background, which checks it and trades the one-time code for tokens (PKCE, the verifier never leaves the extension), then closes the tab. The panel follows the sign-in through storage. Safari asks once to let the extension run on that wiro.ai page.
+- **No identity API.** Apple's guidance is to start the OAuth flow in a new tab. The sign-in opens wiro.ai in a tab; wiro.ai sends the browser back to `https://wiro.ai/extension/callback`; the callback content script hands that address to the background, which checks it and trades the one-time code for tokens (PKCE, the verifier never leaves the extension), then closes the tab. The panel follows the sign-in through storage.
 - **On the Mac.** Safari on iOS has no right-click menus for extensions.
 
 ## Build
@@ -83,6 +83,7 @@ Shipping the app on the Mac App Store needs an Apple Developer Program membershi
 | `contextMenus` | the Wiro entries in the right-click menu |
 | `storage` | the sign-in tokens, the tray, run history and the last model picked per action |
 | content script on `https://wiro.ai/extension/callback*` | finishing the sign-in |
+| website access (`<all_urls>`) | Safari shows an extension's right-click items only on websites it may use. The Sign in button asks for every website once (Always Allow on Every Website); the panel offers the same button until it is granted. The extension still reads only what you right-click. |
 
 The extension reads only what a right-click hands it (the item's address, the selected text or the page address) and sends it to Wiro when you start a run. See the [Wiro privacy policy](https://wiro.ai/agreement/privacy-policy).
 

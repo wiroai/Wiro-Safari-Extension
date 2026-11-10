@@ -31,6 +31,7 @@
     }
   ],
   "permissions": ["contextMenus", "storage"],
+  "host_permissions": ["<all_urls>"],
   "browser_specific_settings": {
     "safari": {
       "strict_min_version": "16.4"

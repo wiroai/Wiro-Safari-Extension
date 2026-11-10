@@ -41,4 +41,10 @@ export const safariPlatform: Platform = {
     return undefined;
   },
   openTab: url => void browser.tabs.create({ url }),
+  // Safari shows the right-click items only on websites the extension may use,
+  // so the panel asks for every website (it must run inside a click).
+  siteAccess: {
+    granted: () => browser.permissions.contains({ origins: ['<all_urls>'] }),
+    request: () => browser.permissions.request({ origins: ['<all_urls>'] }),
+  },
 };
