@@ -1,0 +1,11 @@
+/* Safari sizes the toolbar popover to its page. With no width set, the panel
+   shrank to its narrowest column, one word per line. These sizes give the
+   popover room; in the panel's tab they change nothing. */
+html,
+body {
+  min-width: 380px;
+}
+
+body {
+  min-height: 540px;
+}
