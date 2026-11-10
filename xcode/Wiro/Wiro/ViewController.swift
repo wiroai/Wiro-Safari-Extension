@@ -1,8 +1,10 @@
 //
 //  ViewController.swift
-//  Wiro
+//  Wiro AI
 //
-//  Created by Emin BUDAK on 8.11.2026.
+//  The setup window: shows whether the Safari extension is on, explains how to
+//  turn it on and opens Safari Settings or Safari. It stays open (no quit) and
+//  follows the extension's state while the user changes it in Safari.
 //
 
 import Cocoa
@@ -26,31 +28,44 @@ class ViewController: NSViewController, WKNavigationDelegate, WKScriptMessageHan
     }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        refreshState()
+    }
+
+    /// Asks Safari whether the extension is on and updates the page.
+    func refreshState() {
         SFSafariExtensionManager.getStateOfSafariExtension(withIdentifier: extensionBundleIdentifier) { (state, error) in
             guard let state = state, error == nil else {
-                // Insert code to inform the user that something went wrong.
                 return
             }
 
             DispatchQueue.main.async {
+                let useSettings: Bool
                 if #available(macOS 13, *) {
-                    webView.evaluateJavaScript("show(\(state.isEnabled), true)")
+                    useSettings = true
                 } else {
-                    webView.evaluateJavaScript("show(\(state.isEnabled), false)")
+                    useSettings = false
                 }
+                self.webView.evaluateJavaScript("show(\(state.isEnabled), \(useSettings))")
             }
         }
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if (message.body as! String != "open-preferences") {
-            return;
+        guard let body = message.body as? String else {
+            return
         }
 
-        SFSafariApplication.showPreferencesForExtension(withIdentifier: extensionBundleIdentifier) { error in
-            DispatchQueue.main.async {
-                NSApplication.shared.terminate(nil)
+        switch body {
+        case "open-preferences":
+            SFSafariApplication.showPreferencesForExtension(withIdentifier: extensionBundleIdentifier) { _ in }
+        case "open-safari":
+            if let safari = NSWorkspace.shared.urlForApplication(withBundleIdentifier: "com.apple.Safari") {
+                NSWorkspace.shared.openApplication(at: safari, configuration: NSWorkspace.OpenConfiguration())
             }
+        case "refresh-state":
+            refreshState()
+        default:
+            return
         }
     }
 

@@ -1,22 +1,22 @@
+// The app's setup window. ViewController.swift calls show() with the
+// extension's state, and again every few seconds while the window is open, so
+// the window changes as soon as the extension is turned on in Safari.
+
 function show(enabled, useSettingsInsteadOfPreferences) {
-    if (useSettingsInsteadOfPreferences) {
-        document.getElementsByClassName('state-on')[0].innerText = "Wiro’s extension is currently on. You can turn it off in the Extensions section of Safari Settings.";
-        document.getElementsByClassName('state-off')[0].innerText = "Wiro’s extension is currently off. You can turn it on in the Extensions section of Safari Settings.";
-        document.getElementsByClassName('state-unknown')[0].innerText = "You can turn on Wiro’s extension in the Extensions section of Safari Settings.";
-        document.getElementsByClassName('open-preferences')[0].innerText = "Quit and Open Safari Settings…";
+    if (useSettingsInsteadOfPreferences === false) {
+        // Safari before macOS 13 calls its settings Preferences.
+        for (const word of document.querySelectorAll('.settings')) word.textContent = 'Preferences';
     }
-
-    if (typeof enabled === "boolean") {
-        document.body.classList.toggle(`state-on`, enabled);
-        document.body.classList.toggle(`state-off`, !enabled);
-    } else {
-        document.body.classList.remove(`state-on`);
-        document.body.classList.remove(`state-off`);
-    }
+    document.body.dataset.state = enabled === true ? 'on' : enabled === false ? 'off' : 'unknown';
 }
 
-function openPreferences() {
-    webkit.messageHandlers.controller.postMessage("open-preferences");
+function post(message) {
+    webkit.messageHandlers.controller.postMessage(message);
 }
 
-document.querySelector("button.open-preferences").addEventListener("click", openPreferences);
+for (const button of document.querySelectorAll('button.open-preferences')) {
+    button.addEventListener('click', () => post('open-preferences'));
+}
+document.querySelector('button.open-safari').addEventListener('click', () => post('open-safari'));
+
+setInterval(() => post('refresh-state'), 2000);

@@ -9,11 +9,35 @@
     <link rel="stylesheet" href="../Style.css">
     <script src="../Script.js" defer></script>
 </head>
-<body>
-    <img src="../Icon.png" width="128" height="128" alt="Wiro Icon">
-    <p class="state-unknown">You can turn on Wiro’s extension in Safari Extensions preferences.</p>
-    <p class="state-on">Wiro’s extension is currently on. You can turn it off in Safari Extensions preferences.</p>
-    <p class="state-off">Wiro’s extension is currently off. You can turn it on in Safari Extensions preferences.</p>
-    <button class="open-preferences">Quit and Open Safari Extensions Preferences…</button>
+<body data-state="unknown">
+    <main>
+        <img class="icon" src="../Icon.png" width="88" height="88" alt="">
+
+        <h1 data-show="off unknown">Turn on Wiro AI in Safari</h1>
+        <h1 data-show="on">Wiro AI is on</h1>
+
+        <p class="status">
+            <span class="dot"></span>
+            <span data-show="off">The extension is off</span>
+            <span data-show="on">The extension is on</span>
+            <span data-show="unknown">Checking the extension…</span>
+        </p>
+
+        <ol class="steps" data-show="off unknown">
+            <li>Click <b>Open Safari <span class="settings">Settings</span></b> below.</li>
+            <li>In <b>Extensions</b>, tick <b>Wiro AI</b>. If Safari asks, allow it on wiro.ai.</li>
+            <li>In Safari, click the <b>Wiro</b> button in the toolbar and sign in.</li>
+        </ol>
+
+        <ol class="steps" data-show="on">
+            <li>In Safari, click the <b>Wiro</b> button in the toolbar and sign in.</li>
+            <li>Right-click an image, video, audio clip, selected text or a page and choose <b>Wiro</b>.</li>
+            <li>Pick an action and a model. The price shows before every run.</li>
+        </ol>
+
+        <button class="primary open-preferences" data-show="off unknown">Open Safari <span class="settings">Settings</span></button>
+        <button class="primary open-safari" data-show="on">Open Safari</button>
+        <button class="secondary open-preferences" data-show="on">Safari <span class="settings">Settings</span></button>
+    </main>
 </body>
 </html>
