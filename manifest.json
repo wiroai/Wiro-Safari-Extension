@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Wiro AI",
   "short_name": "Wiro",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Right-click an image, video, audio clip or text to run Wiro AI models: animate, edit, upscale, voice and more.",
   "homepage_url": "https://wiro.ai",
   "icons": {
