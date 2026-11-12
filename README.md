@@ -55,6 +55,10 @@ Each action lists the Wiro models made for it, so new models show up without an 
 - **No identity API.** Apple's guidance is to start the OAuth flow in a new tab. The sign-in opens wiro.ai in a tab; wiro.ai sends the browser back to `https://wiro.ai/extension/callback`; the callback content script hands that address to the background, which checks it and trades the one-time code for tokens (PKCE, the verifier never leaves the extension), then closes the tab. The panel follows the sign-in through storage.
 - **On the Mac.** Safari on iOS has no right-click menus for extensions.
 
+## Install
+
+The Mac App Store link will appear here once the app is live. In Chrome, Brave, Vivaldi or Arc, install Wiro AI from the [Chrome Web Store](https://chromewebstore.google.com/detail/wiro-ai-tools-for-images/cehkhdmppbnfeahegjjkdhangjelehab); in Whale, from the [Naver Whale Store](https://store.whale.naver.com/detail/elgobhnkemhlhfakdmpijbknhehnkgle).
+
 ## Build
 
 Requirements: macOS with Xcode, Node.js 22 or newer and npm 10 or newer.
