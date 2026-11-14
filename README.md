@@ -57,7 +57,7 @@ Each action lists the Wiro models made for it, so new models show up without an 
 
 ## Install
 
-The Mac App Store link will appear here once the app is live. In Chrome, Brave, Vivaldi or Arc, install Wiro AI from the [Chrome Web Store](https://chromewebstore.google.com/detail/wiro-ai-tools-for-images/cehkhdmppbnfeahegjjkdhangjelehab); in Whale, from the [Naver Whale Store](https://store.whale.naver.com/detail/elgobhnkemhlhfakdmpijbknhehnkgle).
+The Mac App Store link will appear here once the app is live. In Chrome, Brave, Vivaldi or Arc, install Wiro AI from the [Chrome Web Store](https://chromewebstore.google.com/detail/wiro-ai-tools-for-images/cehkhdmppbnfeahegjjkdhangjelehab); in Whale, from the [Naver Whale Store](https://store.whale.naver.com/detail/elgobhnkemhlhfakdmpijbknhehnkgle); in Firefox, from [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/wiro-ai/).
 
 ## Build
 
