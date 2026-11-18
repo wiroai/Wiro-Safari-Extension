@@ -6,7 +6,7 @@
 
 Right-click any image, video, audio clip, text or page in Safari to run Wiro AI models: make a video, edit or upscale an image, restore a photo, read text aloud, transcribe, translate and more, with the price shown before every run.
 
-**[Install Chrome Extension](https://chromewebstore.google.com/detail/wiro-ai-tools-for-images/cehkhdmppbnfeahegjjkdhangjelehab)** · **[Install Firefox Add-on](https://addons.mozilla.org/firefox/addon/wiro-ai/)** · **[Install on Naver Whale](https://store.whale.naver.com/detail/elgobhnkemhlhfakdmpijbknhehnkgle)**
+**[Install Chrome Extension](https://chromewebstore.google.com/detail/wiro-ai-tools-for-images/cehkhdmppbnfeahegjjkdhangjelehab)** · **[Install Edge Add-on](https://microsoftedge.microsoft.com/addons/detail/wiro-ai-tools-for-images/obkibkhehpojlejdoinhlmoofalgaddg)** · **[Install Firefox Add-on](https://addons.mozilla.org/firefox/addon/wiro-ai/)** · **[Install on Naver Whale](https://store.whale.naver.com/detail/elgobhnkemhlhfakdmpijbknhehnkgle)**
 
 [![Manifest V3](https://img.shields.io/badge/Manifest-V3-111111?style=for-the-badge&color=111111)](./manifest.json) [![Safari 16.4+ on macOS](https://img.shields.io/badge/Safari-16.4%2B%20on%20macOS-111111?style=for-the-badge&color=111111)](#build) [![TypeScript](https://img.shields.io/badge/TypeScript-111111?style=for-the-badge&color=111111)](./tsconfig.json) [![License: MIT](https://img.shields.io/badge/license-MIT-111111?style=for-the-badge&color=111111)](./LICENSE)
 
@@ -59,7 +59,7 @@ Each action lists the Wiro models made for it, so new models show up without an 
 
 ## Install
 
-The Mac App Store link will appear here once the app is live. In Chrome, Brave, Vivaldi or Arc, install Wiro AI from the [Chrome Web Store](https://chromewebstore.google.com/detail/wiro-ai-tools-for-images/cehkhdmppbnfeahegjjkdhangjelehab); in Whale, from the [Naver Whale Store](https://store.whale.naver.com/detail/elgobhnkemhlhfakdmpijbknhehnkgle); in Firefox, from [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/wiro-ai/).
+The Mac App Store link will appear here once the app is live. In Chrome, Brave, Vivaldi or Arc, install Wiro AI from the [Chrome Web Store](https://chromewebstore.google.com/detail/wiro-ai-tools-for-images/cehkhdmppbnfeahegjjkdhangjelehab); in Edge, from [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/wiro-ai-tools-for-images/obkibkhehpojlejdoinhlmoofalgaddg); in Whale, from the [Naver Whale Store](https://store.whale.naver.com/detail/elgobhnkemhlhfakdmpijbknhehnkgle); in Firefox, from [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/wiro-ai/).
 
 ## Build
 
