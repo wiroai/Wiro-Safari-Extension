@@ -113,6 +113,7 @@ The extension reads only what a right-click hands it (the item's address, the se
 | [Wiro-Firefox-Extension](https://github.com/wiroai/Wiro-Firefox-Extension) | Wiro AI add-on for Firefox |
 | [Wiro-Extension-Core](https://github.com/wiroai/Wiro-Extension-Core) | Shared core of the Wiro AI browser extensions |
 | [Wiro-MCP](https://github.com/wiroai/Wiro-MCP) | Official MCP server for Wiro AI, [`@wiro-ai/wiro-mcp` on npm](https://www.npmjs.com/package/@wiro-ai/wiro-mcp) |
+| [Wiro-Agent-Connectors](https://github.com/wiroai/Wiro-Agent-Connectors) | MCP connectors for Gmail, Shopify, YouTube, Notion and other services without an official MCP server, [`@wiro-ai/wiro-agent-connectors` on npm](https://www.npmjs.com/package/@wiro-ai/wiro-agent-connectors) |
 | [Wiro-Plugin](https://github.com/wiroai/Wiro-Plugin) | Wiro AI plugin for Cursor, Claude Code, Gemini CLI, Devin, Antigravity and Kiro |
 | [Wiro-Skills](https://github.com/wiroai/Wiro-Skills) | Agent skills for images, image edits, video, music, speech, transcripts, 3D and model search |
 | [Wiro-LLM](https://github.com/wiroai/Wiro-LLM) | Vercel AI SDK provider for chat, images, speech, transcription and video |
